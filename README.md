@@ -12,7 +12,7 @@ Steps taken beforehand:
 DETAILS:
 
 1. Input Parameters: The function takes several input parameters:
-- path: This is the path where the iLastik output files are located.
+- path: This is the path where the ilastik output files are located.
 - image_resolution: This parameter specifies the resolution of the images used in ilastik, which can be either "4x" or "2x".
 - predicted_class (optional): This parameter allows filtering the data based on a predicted class, typically used in machine learning scenarios.
 
