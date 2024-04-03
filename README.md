@@ -6,5 +6,6 @@ Steps taken beforehand:
 
 # 1. Step: process_ilastik_output_function
 - helps to merge the output tables into one large data frame by automating tasks such as data loading, metadata extraction, filtering, measurement conversion, and saving
+- function is adapted for images that were taken with the Cytation5 multi-mode reader
 
 # 2. Step: Import_metadata
