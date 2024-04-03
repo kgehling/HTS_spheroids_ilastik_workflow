@@ -1,5 +1,4 @@
-# High-throughput-screening approach with spheroids under various conditions
-# using the ilastik software to process the imaging data aquiried during the screening.
+# High-throughput-screening approach with spheroids under various conditions using the ilastik software to process the imaging data aquiried during the screening.
 
 0.1. ilastik pixel classification workflow
 0.2. ilastik object classification workflow exporting the data as csv files, without changing the default export suffix (.e.g., file still ends with table.csv)
