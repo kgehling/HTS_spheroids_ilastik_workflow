@@ -34,3 +34,32 @@ DETAILS:
 
 
 # 2. Step: Import_metadata
+Adjustments for Usability and Flexibility:
+The script is structured to be modular and reusable. Functions like preprocess_plate and convert_time_stamp_to_hours can be called as needed, depending on the number of plates and the specific requirements of the analysis.
+It includes options to filter the data based on the predicted class and to add identifiers to distinguish between data from different plates or conditions within the experiment.
+
+OUTSIDE R | preparations for the plater package:
+add here
+
+DETAILS
+1. Input Parameters preprocess_plate function:
+- data_path: The file path to the merged table data for a plate.
+- pattern_path: The file path to the experiment design pattern for the plate.
+- cell_type: The type of cell in the plate (e.g., "HepG2").
+- plate_id (optional): An identifier for the plate (e.g., "LPG_1"), used to distinguish between different plates in the dataset.
+- predicted_class (optional): A filter for the predicted class column (e.g., "Spheroid") to include only specific classifications in the analysis.
+
+Description:
+This function reads and preprocesses data from a plate, including filtering, merging with metadata, and adding additional information like the cell type and a self-determined identifier. It optionally filters entries based on the predicted Object class (as defined in the ilastik Object classification workflow).
+
+
+2. Input Parameters Convert Time Stamp to Hours function:
+- df: The data frame containing time_stamp information, this info is extracted from the image ID.
+- interval: The time interval (in hours) between measurements, typically fixed but adjustable for flexibility.
+
+Description:
+Converts time stamps in the data to numeric hours since the experiment's start, with the first measurement explicitly set to 1 hour and subsequent measurements calculated based on the given interval.
+
+3. Merge Data from Multiple Plates:
+The script allows for processing multiple plates by calling preprocess_plate for each one and then merging all resulting data frames into one large data frame. This is facilitated by binding rows from each plate's processed data frame, creating a unified data set that contains data across all processed plates.
+
