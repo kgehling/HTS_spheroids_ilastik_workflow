@@ -45,7 +45,7 @@ convert_time_stamp_to_hours <- function(df, interval) {
   df$hours <- as.numeric(substr(df$time_stamp, nchar(df$time_stamp) - 2, nchar(df$time_stamp)))
   
   # Calculate hours since the start of the experiment
-  df$hours <- ifelse(final_df$hours == 1, 1, (final_df$hours - 1) * interval)
+  df$hours <- ifelse(df$hours == 1, 1, (df$hours - 1) * interval)
   
   return(df)
 }
@@ -99,7 +99,7 @@ plate_info <- list(
 )
 
 # b.2. Preprocess data for the one plate
-final_df <- preprocess_plate(plate_info$path, plate_info$pattern_path, plate_info$cell_type, plate_info$identifier)
+df <- preprocess_plate(plate_info$path, plate_info$pattern_path, plate_info$cell_type, plate_info$identifier)
 
 
 
